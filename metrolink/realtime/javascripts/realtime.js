@@ -50,7 +50,7 @@ $(function() {
   setTimeout(function(){
     $('#wait').hide();
     $('#map').css('width', $( window ).width() - 100);
-    $('#map').css('height', $( window ).height() - 100);
+    $('#map').css('height', $( window ).height() - 200);
     $('#map').css('top', 50);
     $('#map').css('left', 50);
     draw();
