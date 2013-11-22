@@ -1,0 +1,140 @@
+{
+ "name": "MetroLink",
+ "children": [
+  {
+   "name": "91 Line",
+   "children": [
+      {"name": "L. A. Union Station", "size": 3938},
+      {"name": "Norwalk/ Santa Fe Springs", "size": 3812},
+      {"name": "Buena Park", "size": 6714},
+      {"name": "Fullerton", "size": 743},
+	  {"name": "West Corona", "size": 7840},
+      {"name": "North Main Corona", "size": 5914},
+      {"name": "Riverside-La Sierra", "size": 3416},
+	  {"name": "Riverside-Downtown", "size": 5731}
+
+   ]
+  },
+  {
+   "name": "Antelope Valley Line",
+   "children": [
+	  {"name": "L. A. Union Station", "size": 3938},
+      {"name": "Glendale", "size": 3812},
+      {"name": "Downtown Burbank", "size": 6714},
+      {"name": "Sun Valley", "size": 743},
+	  {"name": "Sylmar/San Fernando", "size": 7840},
+      {"name": "Newhall", "size": 5914},
+      {"name": "Santa Clarita", "size": 3416},
+	  {"name": "Via Princessa", "size": 5731},
+	  {"name": "Vincent Grade/Acton", "size": 1675},
+      {"name": "Palmdale", "size": 2042},
+	  {"name": "Lancaster", "size": 1041} 
+
+   ]
+  },
+  {
+   "name": "Burbank-Bob Hope Airport",
+   "children": [
+      {"name": "L. A. Union Station", "size": 3938},
+      {"name": "Glendale", "size": 3812},
+      {"name": "Downtown Burbank", "size": 6714},
+      {"name": "Burbank-Bob Hope Airport", "size": 743}
+
+   ]
+  },
+  {
+   "name": "Inland Emp.-Orange Co. Line",
+   "children": [
+      {"name": "San Bernardino", "size": 3938},
+      {"name": "Riverside-Downtown", "size": 3812},
+      {"name": "Riverside-La Sierra", "size": 6714},
+      {"name": "North Main Corona", "size": 743},
+	  {"name": "West Corona", "size": 7840},
+      {"name": "Anaheim Canyon", "size": 5914},
+      {"name": "Orange", "size": 3416},
+	  {"name": "Santa Ana", "size": 5731},
+	  {"name": "Tustin", "size": 1675},
+      {"name": "Irvine", "size": 2042},
+	  {"name": "Laguna Niguel/ Mission Viejo", "size": 1041},
+	  {"name": "San Juan Capistrano", "size": 9201},
+      {"name": "San Clemente", "size": 19975},
+      {"name": "San Clemente Pier", "size": 1116},
+      {"name": "Oceanside", "size": 6006}
+	  
+  
+   ]
+  },
+  {
+   "name": "Orange County Line",
+   "children": [
+      {"name": "L. A. Union Station", "size": 3938},
+      {"name": "Commerce", "size": 3812},
+      {"name": "Norwalk/ Santa Fe Springs", "size": 6714},
+      {"name": "Buena Park", "size": 743},
+	  {"name": "Fullerton", "size": 7840},
+      {"name": "Anaheim", "size": 5914},
+      {"name": "Orange", "size": 3416},
+	  {"name": "Santa Ana", "size": 5731},
+	  {"name": "Tustin", "size": 1675},
+      {"name": "Irvine", "size": 2042},
+	  {"name": "Laguna Niguel/ Mission Viejo", "size": 1041},
+	  {"name": "San Juan Capistrano", "size": 9201},
+      {"name": "San Clemente", "size": 19975},
+      {"name": "San Clemente Pier", "size": 1116},
+      {"name": "Oceanside", "size": 6006}
+
+   ]
+  },
+  {
+   "name": "Riverside Line",
+   "children": [
+      {"name": "L. A. Union Station", "size": 3938},
+      {"name": "Montebello/ Commerce", "size": 3812},
+      {"name": "Industry", "size": 6714},
+      {"name": "Downtown Pomona", "size": 743},
+	  {"name": "East Ontario", "size": 7840},
+      {"name": "Pedley", "size": 5914},
+      {"name": "Riverside-Downtown", "size": 3416}
+ 
+ ]
+},
+  {
+   "name": "San Bernardino Line",
+   "children": [
+      {"name": "L. A. Union Station", "size": 3938},
+      {"name": "Cal State LA", "size": 3812},
+      {"name": "El Monte", "size": 6714},
+      {"name": "Baldwin Park", "size": 743},
+	  {"name": "Covina", "size": 7840},
+      {"name": "Pomona (North)", "size": 5914},
+      {"name": "Claremont", "size": 3416},
+	  {"name": "Montclair", "size": 5731},
+	  {"name": "Upland", "size": 1675},
+      {"name": "Rancho Cucamonga", "size": 2042},
+	  {"name": "Fontana", "size": 1041},
+	  {"name": "Rialto", "size": 9201},
+      {"name": "San Bernardino", "size": 19975},
+      {"name": "Riverside-Downtown", "size": 3416}
+ 
+ ]
+},
+{
+   "name": "Ventura County Line",
+   "children": [
+      {"name": "L. A. Union Station", "size": 3938},
+      {"name": "Glendale", "size": 3812},
+      {"name": "Downtown Burbank", "size": 6714},
+      {"name": "Burbank-Bob Hope Airport", "size": 743},
+	  {"name": "Van Nuys", "size": 5914},
+      {"name": "Northridge", "size": 3416},
+	  {"name": "Chatsworth", "size": 5731},
+	  {"name": "Simi Valley", "size": 1675},
+      {"name": "Moorpark", "size": 2042},
+	  {"name": "Camarillo", "size": 1041},
+	  {"name": "Oxnard", "size": 9201},
+      {"name": "East Ventura", "size": 19975}
+ 
+ ]
+}
+]
+}

@@ -19,8 +19,8 @@ var svg = d3.select("body").append("svg")
   .append("g")
     .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
-d3.json("metrolink.json", function(error, metrolink) {
-  root = metrolink;
+d3.json("transit.json", function(error, MetroLink) {
+  root = MetroLink;
   root.x0 = height / 2;
   root.y0 = 0;
 
@@ -37,6 +37,19 @@ d3.json("metrolink.json", function(error, metrolink) {
 });
 
 d3.select(self.frameElement).style("height", "800px");
+
+var property;
+
+var metrolinkRoutes = {
+  '91 Line': 1,
+  'Antelope Valley Line': 2,
+  'Burbank-Bob Hope Airport': 3,
+  'Inland Emp.-Orange Co. Line': 4,
+  'Orange County Line': 5,
+  'Riverside Line': 6,
+  'San Bernardino Line': 7,
+  'Ventura County Line': 8
+};
 
 function update(source) {
 
@@ -134,23 +147,13 @@ function click(d) {
     d.children = d._children;
     d._children = null;
   }
-  var metrolinkRoutes = {
-    '91 Line': 1,
-    'Antelope Valley Line': 2,
-    'Burbank-Bob Hope Airport': 3,
-    'Inland Emp.-Orange Co. Line': 4,
-    'Orange County Line': 5,
-    'Riverside Line': 6,
-    'San Bernardino Line': 7,
-    'Ventura County Line': 8
-  };
 
   array = new Array();
   for(var key in metrolinkRoutes){
     array.push(key);
   }
 
-  var property = d.name;
+  property = d.name;
   if (metrolinkRoutes[property] != undefined){
     document.getElementById("line").innerHTML = property; 
   }
@@ -162,6 +165,10 @@ function click(d) {
 }
 
 function show_line(){
-  document.location = "realtime/"+property;
-  //alert(document.getElementById("line").value); 
+  if (property === undefined || property === ''){
+    document.location = '#';
+  }
+  else{
+    document.location = "realtime/?line="+metrolinkRoutes[property];
+  }
 }
