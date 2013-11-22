@@ -134,11 +134,34 @@ function click(d) {
     d.children = d._children;
     d._children = null;
   }
-  document.getElementById("line").value = d.name;
+  var metrolinkRoutes = {
+    '91 Line': 1,
+    'Antelope Valley Line': 2,
+    'Burbank-Bob Hope Airport': 3,
+    'Inland Emp.-Orange Co. Line': 4,
+    'Orange County Line': 5,
+    'Riverside Line': 6,
+    'San Bernardino Line': 7,
+    'Ventura County Line': 8
+  };
+
+  array = new Array();
+  for(var key in metrolinkRoutes){
+    array.push(key);
+  }
+
+  var property = d.name;
+  if (metrolinkRoutes[property] != undefined){
+    document.getElementById("line").innerHTML = property; 
+  }
+  else{
+    property = '';
+    document.getElementById("line").innerHTML = 'None'; 
+  }
   update(d);
 }
 
 function show_line(){
-  document.location = "realtime/"
-  alert(document.getElementById("line").value); 
+  document.location = "realtime/"+property;
+  //alert(document.getElementById("line").value); 
 }

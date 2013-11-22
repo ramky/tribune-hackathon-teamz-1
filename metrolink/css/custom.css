@@ -30,3 +30,8 @@
   width: 75;
   height: 75px;
 }
+
+#selected_line{
+  text-align: right;
+  top: 400px;
+}
