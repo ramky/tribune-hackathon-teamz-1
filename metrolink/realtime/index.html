@@ -15,9 +15,24 @@
       <img src="images/turningBarIndicator.gif">
       <p>Please wait while we load real-time data.</p>
     </div>
-    <div id="map"></div>
+    <div id ="container">
+      <div id="incidents">
+        <header>Incidents</header>
+        <ul>
+          <li>Something happened</li>
+        </ul>                     
+      </div>
+      <div id="map"></div>
+
+    </div>
     <div id="back">
       <a title="Back to Previous page" href="http://localhost:8000"><img src="images/back.jpg" border="0" /></a>
+    </div>
+    <div id="legend_box">
+        <div id="red">Late for more than 10 minutes</div>
+        <div id="green">On-time</div>
+        <div id="orange">Late less than 10 minutes</div>
+    </div>
     </div>
   </body>
 </html>

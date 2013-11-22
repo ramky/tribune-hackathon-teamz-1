@@ -169,6 +169,7 @@ function show_line(){
     document.location = '#';
   }
   else{
-    document.location = "realtime/?line="+metrolinkRoutes[property];
+    //document.location = "realtime/?line="+metrolinkRoutes[property];
+    document.location = "realtime/?line="+property;
   }
 }

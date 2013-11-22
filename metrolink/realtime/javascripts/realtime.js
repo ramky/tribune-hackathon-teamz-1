@@ -39,20 +39,39 @@ function draw() {
   marker.bindPopup("<b>Route starts here.").openPopup();
 
   var firstpolyline = new L.Polyline(items, {
-  color: 'red',
-  weight: 3,
+  color: '#cc6600',
+  weight: 5,
   opacity: 0.5,
   smoothFactor: 1
   });
   map.addLayer(firstpolyline);
 }
+
+function show_legends(){
+
+}
+
 $(function() {
+
+  var width = $( window ).width();
+  var height = $( window ).height();
+  var map_width = ((width * 2 ) / 3 ) - 100;
+  var incidents_width = width / 3;
+  $('#legend_box').css('top',height-100);
+  $('#legend_box').hide();
+  $('#incidents').hide();
   setTimeout(function(){
     $('#wait').hide();
-    $('#map').css('width', $( window ).width() - 100);
-    $('#map').css('height', $( window ).height() - 200);
-    $('#map').css('top', 50);
-    $('#map').css('left', 50);
+    $('#legend_box').show();
+    $('#incidents').show();
+    $('#container').css('width', width);
+    $('#container').css('height', height);
+    $('#map').css('width', map_width - 100);
+    $('#map').css('height', height - 200);
+    $('#incidents').css('width', incidents_width - 50);
+    $('#incidents').css('height', height - 200);
+    $('#legend_box').css('left', (width - 500) / 2);
     draw();
   }, 3000);
+
 }); 

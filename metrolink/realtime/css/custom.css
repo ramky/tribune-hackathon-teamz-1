@@ -13,3 +13,70 @@
   width: 50;
   height: 50px;
 }
+
+#legend_box{
+	border-radius: 5px; 
+	-moz-border-radius: 5px; 
+	-webkit-border-radius: 5px; 
+	border: 2px solid #800000;
+	height: 30px;
+	width: 500px;
+	position: absolute;
+	left: 50px;
+}
+
+#map{
+	left: 50px;
+	top: 50px;	
+}
+
+#container{
+	display: inline;
+	float: left;
+}
+
+#incidents{
+	float: left;
+	background-color: #EEEEEE;
+	left: 50px;
+	top: 100px;
+	margin-top: 50px;
+	margin-left: 50px;
+	overflow: scroll;
+}
+
+#red{
+	margin-top: 15px;
+	border-bottom: 5px solid red;
+	height: 1px;
+	width: 30px;
+	display: inline;
+	margin-right: 10px;
+	margin-left: 10px;
+}
+
+#green{
+	margin-top: 15px;
+	border-bottom: 5px solid green;
+	height: 1px;
+	width: 30px;
+	display: inline;
+	margin-right: 10px;
+	margin-left: 10px;
+}
+
+#orange{
+	margin-top: 15px;
+	border-bottom: 5px solid #CC6600;
+	height: 1px;
+	width: 30px;
+	display: inline;
+	margin-right: 10px;
+	margin-left: 10 px;
+}
+
+header{
+	font: 14pt Arial, sans-serif;
+	font-weight: bold;
+	text-align: center;
+}
