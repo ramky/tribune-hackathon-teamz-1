@@ -1,58 +1,66 @@
-var items = [{
-  lat: "34.12478",
-  lon: "-118.26554"
-}, {
-  lat: "34.12136",
-  lon: "-118.2627"
-}, {
-  lat: "34.14671",
-  lon: "-118.25966"
-}, {
-  lat: "34.1514799",
-  lon: "-118.2345"
-}, {
-  lat: "34.1469699",
-  lon: "-118.25821"
-}, {
-  lat: "34.0828099",
-  lon: "-118.27355"
-}, {
-  lat: "34.13115",
-  lon: "-118.27355"
-}, {
-  lat: "34.12703",
-  lon: "-118.26709"
-}, {        
-  lat: "34.12488",
-  lon: "-118.26542"
-}];
+var stations = [];
+var station_coordinates = [];
+
 function draw() {
-  var lat = 34.12478;
-  var long = -118.26554;
-  console.log('Your latitude is :'+lat+' and longitude is '+long);
-  var map = L.map('map').setView([lat, long], 13);
-  L.tileLayer('http://tile.cloudmade.com/240f377fba63449fabfc11cc6cecd533/997/256/{z}/{x}/{y}.png', {
+  count = 0;
+  $.each(stations, function(i, item) {
+    count += 1;
+    //console.log(item.name);
+
+    if(count == 1){
+      map = L.map('map').setView([item.latitude, item.longitude], 9);
+    }
+
+    L.tileLayer('http://tile.cloudmade.com/240f377fba63449fabfc11cc6cecd533/997/256/{z}/{x}/{y}.png', {
     attribution: '',
     maxZoom: 18
-  }).addTo(map);
-  var marker = L.marker([lat, long]).addTo(map);
-  marker.bindPopup("<b>Route starts here.").openPopup();
+    }).addTo(map);
 
-  var firstpolyline = new L.Polyline(items, {
-  color: '#cc6600',
-  weight: 5,
-  opacity: 0.5,
-  smoothFactor: 1
+    var marker = L.marker([item.latitude, item.longitude]).addTo(map);
+    marker.bindPopup("<b>"+item.name)//.openPopup();
+  
   });
-  map.addLayer(firstpolyline);
+
+  // var firstpolyline = new L.Polyline(station_coordinates, {
+  //   //color: '#cc6600',
+  //   color: 'green',
+  //   weight: 5,
+  //   opacity: 0.5,
+  //   smoothFactor: 1
+  // });
+  // map.addLayer(firstpolyline);
+
 }
 
-function show_legends(){
+function populateTwitter(data){
+  $.each(data, function(i, item) {
+    //console.log(item.tweet);
+    var tweets = document.getElementById('tweets');
+    var entry = document.createElement('li');
+    entry.appendChild(document.createTextNode(item.tweet));
+    tweets.appendChild(entry);
+  });
+}
 
+function populateFromJson(data){
+  $.each(data[0]['Antelope Valley Line'], function(i, item) {
+  stations.push({name: item.name, latitude: item.latitude, longitude: item.longitude})
+  station_coordinates.push({lat: item.latitude, lon: item.longitude})
+
+ //   map = L.map('map').setView([item.latitude, item.longitude], 13);
+  
+  // L.tileLayer('http://tile.cloudmade.com/240f377fba63449fabfc11cc6cecd533/997/256/{z}/{x}/{y}.png', {
+  // attribution: '',
+  // maxZoom: 18
+  // }).addTo(map);
+  
+  // var marker = L.marker([item.latitude, item.longitude]).addTo(map);
+  // marker.bindPopup("<b>"+item.name).openPopup();
+  }); 
+  
 }
 
 $(function() {
-
   var width = $( window ).width();
   var height = $( window ).height();
   var map_width = ((width * 2 ) / 3 ) - 100;
@@ -60,6 +68,31 @@ $(function() {
   $('#legend_box').css('top',height-100);
   $('#legend_box').hide();
   $('#incidents').hide();
+
+  $.ajax({
+    type: 'GET',
+    url: 'http://localhost:8000/realtime/lines.json',
+    success: function(data, status, settings){
+      populateFromJson(data); 
+    },
+    error: function(requestObject, error, errorThrown){
+      alert("An error occured");
+    },
+    dataType: 'json'
+  });
+
+  $.ajax({
+    type: 'GET',
+    url: 'http://localhost:8000/realtime/twitter.json',
+    success: function(data, status, settings){
+      populateTwitter(data); 
+    },
+    error: function(requestObject, error, errorThrown){
+      alert("An error occured");
+    },
+    dataType: 'json'
+  });
+
   setTimeout(function(){
     $('#wait').hide();
     $('#legend_box').show();
